@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import { ShoppingListService } from './shopping-list.service';
 import { Ingredient } from '../shared/ingredient';
 
 @Component({
@@ -8,4 +9,8 @@ import { Ingredient } from '../shared/ingredient';
 })
 export class ShoppingListComponent  {
   ingredients: Ingredient[] = [];
+
+  constructor(private sls: ShoppingListService) {
+
+  }
 }
