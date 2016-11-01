@@ -85,7 +85,8 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
     let recipeIngredients = new FormArray([]);
 
     if (!this.isNew) {
-      this.recipe.ingredients.forEach((ingredient, index) => {
+      if (this.recipe.hasOwnProperty('ingredients')) {
+        this.recipe.ingredients.forEach((ingredient, index) => {
         const formGroup = new FormGroup({
           name: new FormControl(this.recipe.ingredients[index].name, Validators.required),
           amount: new FormControl(this.recipe.ingredients[index].amount, [
@@ -95,7 +96,8 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
         });
 
         recipeIngredients.push(formGroup);
-      });
+        });
+      }
 
       recipeName = this.recipe.name;
       recipeImageUrl = this.recipe.imagePath;
