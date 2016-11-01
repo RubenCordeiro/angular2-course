@@ -26,4 +26,13 @@ export class RecipeService {
   deleteRecipe(recipe: Recipe) {
     this.recipes.splice(this.recipes.indexOf(recipe), 1);
   }
+
+  addRecipe(recipe: Recipe) {
+    this.recipes.push(recipe);
+  }
+
+  editRecipe(oldRecipe: Recipe, newRecipe: Recipe) {
+    const index = this.recipes.indexOf(oldRecipe);
+    this.recipes[index] = newRecipe;
+  }
 }

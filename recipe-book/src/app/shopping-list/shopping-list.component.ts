@@ -9,8 +9,17 @@ import { Ingredient } from '../shared/ingredient';
 })
 export class ShoppingListComponent  {
   ingredients: Ingredient[] = [];
+  selectedItem: Ingredient = null;
 
   constructor(private sls: ShoppingListService) {
+    this.ingredients = sls.getItems();
+  }
 
+  public onSelectItem(item: Ingredient) {
+    this.selectedItem = item;
+  }
+
+  onCleared() {
+    this.selectedItem = null;
   }
 }
