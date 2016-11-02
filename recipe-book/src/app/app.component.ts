@@ -6,8 +6,7 @@ import { HeaderComponent } from './header.component';
 @Component({
   selector: 'rb-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [RecipeService]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 }
